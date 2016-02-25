@@ -23,15 +23,27 @@
         shuffle($deck);
     }
     
-    // Get the path to the next card in the deck
-    function getNextCardLink() {
-        global $suit;
+    // Gets a card from the deck (1 - 52)
+    function getNextCard() {
         global $deck;
+        $card = -1;
         
-        // If there is a card in the deck, a card link will be returned
+        // If there is a card in the deck, the next card will be chosen
         if (count($deck) > 0) {
             // Grab the last card on the deck
             $card = array_pop($deck);
+        }
+        
+        // Returns the next card, -1 if the deck was empty 
+        return $card;
+    }
+    
+    // Get the path to the next card in the deck
+    function getCardLink($card) {
+        global $suit;
+        
+        // If the card is in the range (1 - 52), a card link will be returned
+        if ($card >= 0 && $card <= 52) {
             
             // Calculate the card's file number and the suit it belongs to
             $cardNumber = $card % 13;
@@ -46,19 +58,19 @@
             
             return "cards/$suitName/$cardNumber.png";
         }
-        // If there are no cards, an empty string will be returned
+        // If the card number is out of range, an empty string will be returned
         else {
             return "";   
         }
     }
-    
     
     // Display the deck of cards
     function displayDeck() {
         
         for ($i = 1; $i <= 52; $i++) {
             
-            $link = getNextCardLink();
+            $card = getNextCard();
+            $link = getCardLink($card);
             echo "<img src='$link' >";
             
             if ($i % 13 == 0) {
