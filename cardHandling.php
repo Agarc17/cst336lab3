@@ -66,6 +66,7 @@
     
     // Display the deck of cards
     function displayDeck() {
+        global $deck;
         
         for ($i = 1; $i <= 52; $i++) {
             
