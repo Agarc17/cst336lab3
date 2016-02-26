@@ -1,13 +1,10 @@
 <?php
-    $suit = array();
-    $deck = array();
     
     // Set the values of $suit to the directory names for the matching set of cards
     $suit = array("clubs", "diamonds", "hearts", "spades");
 
     // Fills the $deck array with the value of each card (1-52)
-    function resetDeck() {
-        global $deck;
+    function resetDeck(&$deck) {
         $deck = array();
         
         for ($i = 1; $i <= 52; $i++) {
@@ -17,15 +14,13 @@
     }
     
     // Shuffle the $deck array so the cards are in random order
-    function shuffleDeck() {
-        global $deck;
+    function shuffleDeck(&$deck) {
         
         shuffle($deck);
     }
     
     // Gets a card from the deck (1 - 52)
-    function getNextCard() {
-        global $deck;
+    function getNextCard(&$deck) {
         $card = -1;
         
         // If there is a card in the deck, the next card will be chosen
@@ -65,12 +60,11 @@
     }
     
     // Display the deck of cards
-    function displayDeck() {
-        global $deck;
+    function displayDeck(&$deck) {
         
         for ($i = 1; $i <= 52; $i++) {
             
-            $card = getNextCard();
+            $card = getNextCard($deck);
             $link = getCardLink($card);
             echo "<img src='$link' >";
             
@@ -80,21 +74,10 @@
         } 
     }
     
-    // Fill and shuffle the deck
-    resetDeck();
-    //shuffleDeck();
-    
+    /*
+    $deck = array();
+    resetDeck($deck);
+    //shuffleDeck($deck);
+    displayDeck($deck);
+    */
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Cards </title>
-        <meta charset="utf-8">
-    <head>
-    
-    <body>
-        <h1> Deck of Cards </h1><br>
-        <?=displayDeck()?>
-    </body>
-</html>
