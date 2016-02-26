@@ -1,6 +1,5 @@
 
 <?php
-    include ("cardHandling.php");
 
     // Each player get their own array represented by one's and zero's. 
     // One meaning that they have that card and zero meaning that they don't have it. 

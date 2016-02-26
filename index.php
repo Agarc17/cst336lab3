@@ -1,13 +1,38 @@
 <?php
+    include ("cardHandling.php");
     include ("distribution.php");
+    include ("player.php");
     
     $deck = array();
-    $testPlayer = array();
-    $testScore = 0;
     
+    // These are the player's hands
+    $playerOneHand = array();
+    $playerTwoHand = array();
+    $playerThreeHand = array();
+    $playerFourHand = array();
+    $playerHands = array($playerOneHand, $playerTwoHand, $playerThreeHand, $playerFourHand);
+    
+    // These are the player's scores for their hand
+    $scoreOne = 0;
+    $scoreTwo = 0;
+    $scoreThree = 0;
+    $scoreFour = 0;
+    $playerScores = array($scoreOne, $scoreTwo, $scoreThree, $scoreFour);
+    
+    // These are the names of the players
+    $playerOne = getRandomPlayer();
+    $playerTwo = getRandomPlayer();
+    $playerThree = getRandomPlayer();
+    $playerFour = getRandomPlayer();
+    $playerNames = array($playerOne, $playerTwo, $playerThree, $playerFour);
+    
+    // Create the deck of cards and distribute cards to the players (also calculates their scores)
     resetDeck($deck);
     shuffleDeck($deck);
-    distribute($testPlayer, $testScore, $deck);
+    distribute($playerHands[0], $playerScores[0], $deck);
+    distribute($playerHands[1], $playerScores[1], $deck);
+    distribute($playerHands[2], $playerScores[2], $deck);
+    distribute($playerHands[3], $playerScores[3], $deck);
     
     /*
     echo "testPlayer: <br>";
@@ -20,6 +45,8 @@
     var_dump($deck);
     */
 
+    // Display the players
+    //displayPlayers($playerHands, $playerScores, $playerNames);
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +55,8 @@
         <title> </title>
     </head>
     <body>
+    
+    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
 
     </body>
 </html>
