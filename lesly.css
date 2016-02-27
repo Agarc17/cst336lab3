@@ -2,10 +2,6 @@ main{
     text-align: center;
 }
 
-.inset{
-    border-style: inset;
-}
-
 figure{
    margin: 0;
 }
