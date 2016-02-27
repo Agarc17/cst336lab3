@@ -66,7 +66,7 @@
        	
        	<center>
        	    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
-       	    <h3> <?= displayWinner($playerScores, $playerNames);?> </h3>
+       	    <h2> <?= displayWinner($playerScores, $playerNames);?> </h2>
        	</center>
        	
        	<br />
