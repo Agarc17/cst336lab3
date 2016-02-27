@@ -59,14 +59,19 @@
     
     <body>
         <main>
-       	<img src = "../img/Silverjack.png" alt="Silverjack Banner" title="Silverjack Banner" />
+            
+       	<img src = "../img/silverjack.jpg" alt="Silverjack Banner" title="Silverjack Banner" />
+       	<br /> <br />
+       	
        	<center>
        	    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
        	</center>
        	
+       	<br />
+       	<figure>
+       	    <img src = "../img/table.png" alt="Silverjack Table" title="Silverjack Table" />
+       	</figure>
+       	
        </main>
-    
-    
-
     </body>
 </html>
