@@ -76,7 +76,7 @@
             }
             
             // Display the player's score
-            echo "<td>$scores[$row]</td>";
+            echo "<td><strong>$scores[$row]</strong></td>";
             echo "<tr>";
         }
         echo "</table>";
