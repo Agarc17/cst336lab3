@@ -52,11 +52,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <meta charset = "utf-8" />
+        <link href = "lesly.css" rel="stylesheet" />
+        <title> Silverjack </title>
     </head>
-    <body>
     
-    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
+    <body>
+        <main>
+       	<img src = "../img/Silverjack.png" alt="Silverjack Banner" title="Silverjack Banner" />
+       	<center>
+       	    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
+       	</center>
+       	
+       </main>
+    
+    
 
     </body>
 </html>
