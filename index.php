@@ -60,7 +60,7 @@
     <body>
         <main>
             
-       	<img src = "../img/silverjack.jpg" alt="Silverjack Banner" title="Silverjack Banner" />
+       	<img src = "img/silverjack.jpg" alt="Silverjack Banner" title="Silverjack Banner" />
        	<br /> <br />
        	
        	<center>
@@ -69,7 +69,7 @@
        	
        	<br />
        	<figure>
-       	    <img src = "../img/table.png" alt="Silverjack Table" title="Silverjack Table" />
+       	    <img src = "img/table.png" alt="Silverjack Table" title="Silverjack Table" />
        	</figure>
        	
        </main>
