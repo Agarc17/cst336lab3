@@ -4,16 +4,28 @@
         $max = 0;
         for($i = 0; $i < sizeof($playerScores); $i++)
         {
-            if($playerScores[$i] > $max)
+            if($playerScores[$i] > $max && $playerScores <= 42)
             {
                 $max = $playerScores[$i];
             }
         }
+        $sum = 0;
+        $numWinners = 0;
         for($i = 0; $i < sizeof($playerScores); $i++)
+        {
+            if($playerScores[$i] != $max)
+            {
+                $sum += $playerScores[$i];
+            }
+            else
+                $numWinners++;
+        }
+        
+        for($i = 0; $i <sizeof($playerScores); $i++)
         {
             if($playerScores[$i] == $max)
             {
-                echo $playerNames[$i]." wins ".$playerScores[$i]." points!!!";
+                 echo $playerNames[$i]." wins ".$sum/$numWinners." points!!!";
             }
         }
     }
