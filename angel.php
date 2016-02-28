@@ -4,7 +4,7 @@
         $max = 0;
         for($i = 0; $i < sizeof($playerScores); $i++)
         {
-            if($playerScores[$i] > $max && $playerScores <= 42)
+            if($playerScores[$i] > $max && $playerScores[$i] <= 42)
             {
                 $max = $playerScores[$i];
             }
@@ -20,12 +20,11 @@
             else
                 $numWinners++;
         }
-        
         for($i = 0; $i <sizeof($playerScores); $i++)
         {
             if($playerScores[$i] == $max)
             {
-                 echo $playerNames[$i]." wins ".$sum/$numWinners." points!!!";
+                 echo $playerNames[$i], " wins ",  $sum/$numWinners, " points!!!<br/>";
             }
         }
     }
