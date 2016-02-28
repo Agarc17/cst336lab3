@@ -2,6 +2,7 @@
     include ("cardHandling.php");
     include ("distribution.php");
     include ("player.php");
+    include ("angel.php");
     
     $deck = array();
     
@@ -65,6 +66,7 @@
        	
        	<center>
        	    <?=displayPlayers($playerHands, $playerScores, $playerNames);?>
+       	    <h2> <?= displayWinner($playerScores, $playerNames);?> </h2>
        	</center>
        	
        	<br />
